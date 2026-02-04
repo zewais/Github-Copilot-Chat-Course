@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bucks2Bar - Budget Tracker</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h1 class="mb-4">Bucks2Bar - Monthly Budget Tracker</h1>
+
+      <!-- Tab Navigation -->
+      <ul class="nav nav-tabs" id="budgetTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="data-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#data"
+            type="button"
+            role="tab"
+          >
+            Data
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="chart-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#chart"
+            type="button"
+            role="tab"
+          >
+            Chart
+          </button>
+        </li>
+      </ul>
+
+      <!-- Tab Content -->
+      <div class="tab-content" id="budgetTabContent">
+        <!-- Data Tab -->
+        <div class="tab-pane fade show active" id="data" role="tabpanel">
+          <div class="mt-4">
+            <h4>Enter Monthly Income and Expenses</h4>
+            <form id="budgetForm" novalidate>
+              <div class="row fw-bold mb-2">
+                <div class="col-md-4">Month</div>
+                <div class="col-md-4">Income ($)</div>
+                <div class="col-md-4">Expenses ($)</div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <label class="form-label">January</label>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control income-input"
+                    id="income-jan"
+                    value="850"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control expense-input"
+                    id="expense-jan"
+                    value="620"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <label class="form-label">February</label>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control income-input"
+                    id="income-feb"
+                    value="920"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control expense-input"
+                    id="expense-feb"
+                    value="580"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <label class="form-label">March</label>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control income-input"
+                    id="income-mar"
+                    value="780"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control expense-input"
+                    id="expense-mar"
+                    value="710"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <label class="form-label">April</label>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control income-input"
+                    id="income-apr"
+                    value="650"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control expense-input"
+                    id="expense-apr"
+                    value="490"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <label class="form-label">May</label>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control income-input"
+                    id="income-may"
+                    value="890"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control expense-input"
+                    id="expense-may"
+                    value="740"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <label class="form-label">June</label>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control income-input"
+                    id="income-jun"
+                    value="810"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control expense-input"
+                    id="expense-jun"
+                    value="560"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <label class="form-label">July</label>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control income-input"
+                    id="income-jul"
+                    value="950"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control expense-input"
+                    id="expense-jul"
+                    value="680"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <label class="form-label">August</label>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control income-input"
+                    id="income-aug"
+                    value="720"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control expense-input"
+                    id="expense-aug"
+                    value="530"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <label class="form-label">September</label>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control income-input"
+                    id="income-sep"
+                    value="870"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control expense-input"
+                    id="expense-sep"
+                    value="640"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <label class="form-label">October</label>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control income-input"
+                    id="income-oct"
+                    value="760"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control expense-input"
+                    id="expense-oct"
+                    value="590"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <label class="form-label">November</label>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control income-input"
+                    id="income-nov"
+                    value="830"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control expense-input"
+                    id="expense-nov"
+                    value="670"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <label class="form-label">December</label>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control income-input"
+                    id="income-dec"
+                    value="910"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    type="number"
+                    class="form-control expense-input"
+                    id="expense-dec"
+                    value="790"
+                    placeholder="0"
+                    min="0"
+                    step="0.01"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid number (0 or greater)
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn btn-primary" id="updateChartBtn">
+                Update Chart
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Chart Tab -->
+        <div class="tab-pane fade" id="chart" role="tabpanel">
+          <div class="mt-4">
+            <!-- download button  -->
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="downloadChartBtn"
+            >
+              Download
+            </button>
+            <h4>Income vs Expenses</h4>
+            <canvas id="budgetChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
